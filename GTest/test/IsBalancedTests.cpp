@@ -22,3 +22,9 @@ TEST_F(IsBalancedTests, testTwoCharsTrue)
     IsBalanced ib;
     EXPECT_EQ(ib.IsItBalanced("()"), true);
 }
+
+TEST_F(IsBalancedTests, testAnotherTwoCharsTrue)
+{
+    IsBalanced ib;
+    EXPECT_EQ(ib.IsItBalanced("[]"), true);
+}
