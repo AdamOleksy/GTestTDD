@@ -17,3 +17,8 @@ TEST_F(IsBalancedTests, testOneChar)
     EXPECT_EQ(ib.IsItBalanced(")"), false);
 }
 
+TEST_F(IsBalancedTests, testTwoCharsTrue)
+{
+    IsBalanced ib;
+    EXPECT_EQ(ib.IsItBalanced("()"), true);
+}
