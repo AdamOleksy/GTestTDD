@@ -28,3 +28,15 @@ TEST_F(IsBalancedTests, testAnotherTwoCharsTrue)
     IsBalanced ib;
     EXPECT_EQ(ib.IsItBalanced("[]"), true);
 }
+
+TEST_F(IsBalancedTests, testBalancedFour)
+{
+    IsBalanced ib;
+    EXPECT_EQ(ib.IsItBalanced("{[]}"), true);
+    EXPECT_EQ(ib.IsItBalanced("{{}}"), true);
+    EXPECT_EQ(ib.IsItBalanced("[[]]"), true);
+    EXPECT_EQ(ib.IsItBalanced("[{}]"), true);
+    EXPECT_EQ(ib.IsItBalanced("{()}"), true);
+    EXPECT_EQ(ib.IsItBalanced("()()"), true);
+    EXPECT_EQ(ib.IsItBalanced("(())"), true);
+}
