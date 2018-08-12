@@ -40,3 +40,12 @@ TEST_F(IsBalancedTests, testBalancedFour)
     EXPECT_EQ(ib.IsItBalanced("()()"), true);
     EXPECT_EQ(ib.IsItBalanced("(())"), true);
 }
+
+TEST_F(IsBalancedTests, testNotbalancedFour)
+{
+    IsBalanced ib;
+    EXPECT_EQ(ib.IsItBalanced("{[}]"), false);
+    EXPECT_EQ(ib.IsItBalanced("{)(}"), false);
+    EXPECT_EQ(ib.IsItBalanced("(}{)"), false);
+    EXPECT_EQ(ib.IsItBalanced("{]{]"), false);
+}
