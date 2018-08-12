@@ -58,3 +58,28 @@ TEST_F(IsBalancedTests, testBalancedSix)
     EXPECT_EQ(ib.IsItBalanced("[[{}]]"), true);
     EXPECT_EQ(ib.IsItBalanced("(){[]}"), true);
 }
+
+TEST_F(IsBalancedTests, testUnbalancedSix)
+{
+    IsBalanced ib;
+    EXPECT_EQ(ib.IsItBalanced("}{[][]"), false);
+    EXPECT_EQ(ib.IsItBalanced("[{)(}]"), false);
+    EXPECT_EQ(ib.IsItBalanced("[}{][]"), false);
+    EXPECT_EQ(ib.IsItBalanced("[]{[)}"), false);
+}
+
+TEST_F(IsBalancedTests, testBalancedTen)
+{
+    IsBalanced ib;
+    EXPECT_EQ(ib.IsItBalanced("{[]}([]{})"), true);
+    EXPECT_EQ(ib.IsItBalanced("([{[()]}])"), true);
+    EXPECT_EQ(ib.IsItBalanced("()[]{}()[]"), true);
+}
+
+TEST_F(IsBalancedTests, testDifferentChars)
+{
+    IsBalanced ib;
+    EXPECT_EQ(ib.IsItBalanced("adam"), false);
+    EXPECT_EQ(ib.IsItBalanced("([{[(adam)]}])"), false);
+    EXPECT_EQ(ib.IsItBalanced("(jas)[i]{malgosia}()[]"), false);
+}
